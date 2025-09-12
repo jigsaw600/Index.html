@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Tasks</title>
+</head>
+<body>
+  <h2>Output:</h2>
+  <div id="output"></div>
+
+  <script>
+    // Helper function to write to the page
+    function write(message) {
+      document.getElementById("output").innerHTML += message + "<br>";
+    }
+
+    // 1. For loop from 0 to 10 (odd/even)
+    for (let i = 0; i <= 10; i++) {
+      if (i % 2 === 0) {
+        write(`Count ${i} is even`);
+      } else {
+        write(`Count ${i} is odd`);
+      }
+    }
+
+    write("<br>"); // line break for readability
+
+    // 2. Ask user for a number between 5 and 20
+    let myNum;
+    do {
+      myNum = parseInt(prompt("Enter a number between 5 and 20:"));
+    } while (isNaN(myNum) || myNum < 5 || myNum > 20);
+
+    // Do...while loop from 1 to myNum
+    let counter = 1;
+    do {
+      write(`Loop counter: ${counter}`);
+      counter++;
+    } while (counter <= myNum);
+
+    write("<br>");
+
+    // 3. Create an array of subjects
+    const subjects = ["Accounting", "Algebra", "Programming", "Art", "Data Analytics"];
+
+    // Display array using forEach
+    write("Subjects (listed):");
+    subjects.forEach(subject => write(`- ${subject}`));
+
+    write("<br>");
+
+    // 4. Display subjects in one line, separated by commas
+    write("Subjects (comma separated): " + subjects.join(", "));
+  </script>
+</body>
+</html>
